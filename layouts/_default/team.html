@@ -1,0 +1,28 @@
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{.Title}}</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <img src="{{ .Site.BaseURL }}{{.Params.thumbnail}}" width="200px">
+    {{.Content}}
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    {{.Params.job}}
+
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      Get Started
+    </a>
+  </div>
+  <div class="mdl-card__menu">
+    <a href="{{.Params.linkedin}}" target="_blank">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="mdi mdi-linkedin-box"></i>
+      </button>
+    </a>
+    <a href="{{.Params.github}}" target="_blank">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="mdi mdi-github-box"></i>
+      </button>
+    </a>
+  </div>
+</div>

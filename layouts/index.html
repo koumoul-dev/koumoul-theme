@@ -1,0 +1,29 @@
+<!doctype html>
+<html amp lang="fr">
+
+{{ partial "head.html" . }}
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        {{ partial "header.html" . }}
+        <main class="mdl-layout__content" style="background-image: url({{ .Site.BaseURL }}{{.Site.Params.banner}}); height:100%">
+          <br>
+          <h1 class="mdl-color-text--accent">{{.Site.Title}}</h1>
+          <h3 class="mdl-color-text--primary">{{.Site.Params.description}}</h3>
+          <div class="mdl-grid">
+             <div class="mdl-layout-spacer"></div>
+             {{ range (where .Data.Pages "Type" "skill") }}
+               <div class="mdl-cell mdl-cell--3-col">
+                 {{ .Render "skill" }}
+               </div>
+             {{ end }}
+
+             <div class="mdl-layout-spacer"></div>
+          </div>
+            {{ partial "footer.html" . }}
+        </main>
+    </div>
+</body>
+
+</html>
